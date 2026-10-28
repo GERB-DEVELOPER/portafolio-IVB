@@ -1,32 +1,9 @@
-<main class="container section">
-    <span class="section-tag">Bienvenido</span>
+<app-navbar />
+
+<div class="page-content">
+    <router-outlet />
+</div>
 
 
-    <h1>Hola, este es el portafolio de {{title()}} y su chamita {{chama()}}</h1>
-    <h2>Subtítulo de prueba</h2>
-    <p>Este es un párrafo de prueba para ver los colores del texto.</p>
-    <p>
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum, ut at? Laborum laudantium aperiam dicta
-        perferendis vero pariatur eveniet fugiat delectus architecto quos, dolorum asperiores reiciendis molestiae fuga
-        officiis fugit.
-    </p>
-    <p><a href="#">Este es un enlace de prueba</a></p>
-    <div class="btn-row">
-        <a href="#" class="btn btn-primary">
-            <i class="bi bi-grid"></i> Ver proyectos
-        </a>
-        <a href="#" class="btn btn-outline">
-            <i class="bi bi-download"></i> Descargar CV
-        </a>
-    </div>
 
-    <article class="card">
-        <h3>Tarjeta de prueba</h3>
-        <p>
-            Las tarjetas sirven para agrupar información, como un proyecto
-            o una habilidad.
-        </p>
-    </article>
-
-</main>
-<router-outlet /> <!-- no tocar-->
+<app-footer />
