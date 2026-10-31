@@ -77,5 +77,125 @@ export const HIGHLIGHTS: Highlight[] = [
     linkText: 'Escríbeme',
   },
 ];
+/* =========================================================
+   SOBRE MÍ
+   ========================================================= */
+   /* =========================================================
+   SOBRE MÍ
+   ========================================================= */
+export interface Stat{
+     
+  value: string;
+  label: string;
+  
+}
+   
+/** Molde de la presentación de "Sobre mí" */
+export interface AboutInfo{
+  title: string;
+  paragraphs: string[];
+  stats: Stat[];
+}
+/** Tu presentación */
+export const ABOUT: AboutInfo = {
+  
+ title: 'Conoce mi historia',
+  paragraphs: [
+  'Soy estudiante de Desarrollo de Sistemas de Información. Me interesa el desarrollo backend: diseñar APIs, modelar bases de datos y escribir código que otros puedan entender.',
+    'Aprendo construyendo proyectos reales. Este portafolio es uno de ellos: lo hice con Angular y lo publiqué en GitHub.',
+  ],
+  stats: [
+    { value: '3', label: 'años estudiando sistemas' },
+    { value: '10+', label: 'proyectos realizados' },
+     { value: '8',   label: 'tecnologías que uso' },
+  ]
+}
+/** Tipos de ítem de la línea de tiempo: SOLO estos tres valores */
+export type TimelineType = 'education' | 'work' | 'course';
 
+/** Molde de un ítem de la línea de tiempo */
+export interface TimelineItem {
+  type: TimelineType;     // estudio, trabajo o curso
+  title: string;          // qué estudiaste o hiciste
+  place: string;          // dónde
+  period: string;         // cuándo: '2024 - Actualidad'
+  description: string;    // una o dos líneas
+  current?: boolean;      // opcional: true si es lo que haces ahora
+}
 
+/** Tu trayectoria, de lo más reciente a lo más antiguo */
+export const TIMELINE: TimelineItem[] = [
+  {
+    type: 'education',
+    title: 'Desarrollo de Sistemas de Información',
+    place: 'Instituto de Educación Superior',
+    period: '2024 - Actualidad',
+    description: 'Programación orientada a objetos, bases de datos, servicios web y desarrollo de aplicaciones.',
+    current: true,
+  },
+  {
+    type: 'work',
+    title: 'Prácticas de soporte técnico',
+    place: 'Nombre de la empresa o institución',
+    period: '2025',
+    description: 'Mantenimiento de equipos, instalación de software y atención a usuarios.',
+  },
+  {
+    type: 'course',
+    title: 'Curso de Java y Spring Boot',
+    place: 'Plataforma en línea',
+    period: '2024',
+    description: 'Creación de APIs REST con Spring Boot, JPA y PostgreSQL.',
+  },
+  {
+    type: 'education',
+    title: 'Educación secundaria',
+    place: 'Nombre del colegio',
+    period: '2019 - 2023',
+    description: 'Secundaria completa.',
+  },
+];
+
+/** Molde de una habilidad */
+export interface Skill {
+  name: string;
+  level: number;          // de 0 a 100
+}
+
+/** Molde de un grupo de habilidades */
+export interface SkillGroup {
+  title: string;
+  icon: string;           // clase de Bootstrap Icons
+  skills: Skill[];        // lista de habilidades DENTRO del grupo
+}
+
+/** Tus habilidades, agrupadas */
+export const SKILL_GROUPS: SkillGroup[] = [
+  {
+    title: 'Backend',
+    icon: 'bi-hdd-stack',
+    skills: [
+      { name: 'Java', level: 85 },
+      { name: 'Spring Boot', level: 75 },
+      { name: 'SQL y PostgreSQL', level: 70 },
+    ],
+  },
+  {
+    title: 'Frontend',
+    icon: 'bi-window',
+    skills: [
+      { name: 'HTML y CSS', level: 80 },
+      { name: 'TypeScript', level: 60 },
+      { name: 'Angular', level: 55 },
+    ],
+  },
+  {
+    title: 'Herramientas',
+    icon: 'bi-tools',
+    skills: [
+      { name: 'Git y GitHub', level: 70 },
+      { name: 'VS Code', level: 85 },
+      { name: 'Postman', level: 65 },
+    ],
+  },
+];
